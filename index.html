@@ -25,7 +25,7 @@
     <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
       <div class="w-full h-full flex flex-col justify-center items-center">
         <img
-          src="./assets/hamb-1.png"
+          src="./assets/Logomarca_de_hamburgueria_artesanal-removebg-preview.png"
           alt="Logo de hamburguer"
           class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
         />
@@ -34,12 +34,17 @@
         </h1>
 
         <span class="text-white font-medium"
-          >Rua Corumbá, Imbariê - Rio de Janeiro</span
+          >R. Jataí, 350 - Rio Imbariê, Duque de Caxias - RJ</span
         >
 
         <div class="bg-green-500 px-4 py-1 rounded-lg mt-5" id="date-span">
           <span class="text-white font-medium">
-            Seg a Dom - 17:00 as 22:00</span
+            Seg a Dom -  13:00 às 23:30</span
+          >
+        </div>
+        <div class="bg-green-500 px-4 py-1 rounded-lg mt-5" id="date-span">
+          <span class="text-white font-medium">
+            <a href=""><i class="fa-brands fa-whatsapp"></i>  Peça pelo Whatsapp</a></span
           >
         </div>
       </div>
@@ -327,7 +332,7 @@
 
     <!--COMEÇO MODAL-->
     <div
-      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal"
     >
       <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
@@ -346,7 +351,7 @@
         </p>
 
         <div class="flex items-center justify-between mt-5 w-full">
-          <button id="close-modal-btn" class="">Fechar</button>
+          <button id="close-modal-btn" >Fechar</button>
           <button
             id="chackout-btn"
             class="bg-green-500 text-white px-4 py-1 rounded"
@@ -372,5 +377,6 @@
       </button>
     </footer>
     <!--final do Footer carrinho-->
+    <script src="./script.js"></script>
   </body>
 </html>
