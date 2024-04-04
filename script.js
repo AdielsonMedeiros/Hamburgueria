@@ -15,6 +15,7 @@ const addressWarn = document.getElementById("address-warn");
 let cart = [];
 cartBtn.addEventListener("click",function() {
     cartModal.style.display = "flex";
+    updateCartModal()
 })
 
 cartModal.addEventListener("click", function(evento) {
@@ -39,10 +40,86 @@ menu.addEventListener("click", function(evento) {
 })
 
 function addToCart(name,price){
-    cart.push({
-        name,
-        price,
-        quantity: 1,
-    })
+    const existingItem = cart.find(item => item.name === name)
+
+    if(existingItem){
+
+        existingItem.quantity += 1;
+
+    }else{
+
+        cart.push({
+            name,
+            price,
+            quantity: 1,
+
+        })
+
+    }
+    
+    updateCartModal()
+
 }
+
+function updateCartModal(){
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        const cartItemElement = document.createElement("div");
+        cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col")
+
+        cartItemElement.innerHTML = `
+        
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="font-medium">${item.name}</p>
+                <p>Qtd: ${item.quantity}</p>
+                <p class ="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
+            </div>
+            <button class="remove-from-cart-btn" data-name="${item.name}" > Remover </button>
+        </div>
+        
+        
+        `
+
+        cartItemsContainer.appendChild(cartItemElement)
+
+        total += item.price * item.quantity;
+    })
+
+    cartTotal.textContent = total.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+
+    cartCounter.innerHTML = cart.length
+}
+
+
+cartItemsContainer.addEventListener("click", function(event){
+    if(event.target.classList.contains("remove-from-cart-btn")){
+        const name = event.target.getAttribute("data-name");
+
+        removeItemCart(name);
+    }
+})
+
+function removeItemCart(name){
+    const index = cart.findIndex(item => item.name === name);
+
+    if(index !== -1){
+        const item = cart[index];
+        if(item.quantity > 1){
+            item.quantity -= 1;
+            updateCartModal();
+            return;
+        }
+
+        cart.splice(index,1)
+        updateCartModal();
+    }
+}
+
+
 
