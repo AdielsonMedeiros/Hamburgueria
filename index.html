@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,12 +42,13 @@
           <span class="text-white font-medium">
             Seg a Dom -  13:00 às 23:30</span
           >
+          
         </div>
-        <div class="bg-green-500 px-4 py-1 rounded-lg mt-5" id="date-span">
-          <span class="text-white font-medium">
-            <a href=""><i class="fa-brands fa-whatsapp"></i>  Peça pelo Whatsapp</a></span
-          >
+
+        <div class="bg-green-500 px-4 py-1 rounded-lg mt-5" id="date-a-wpp">
+          <a class="text-white font-medium" href=""><i class="fa-brands fa-whatsapp"></i>  Peça pelo Whatsapp</a>
         </div>
+        
       </div>
     </header>
     <!--Fim do Header-->
@@ -353,7 +355,7 @@
         <div class="flex items-center justify-between mt-5 w-full">
           <button id="close-modal-btn" >Fechar</button>
           <button
-            id="chackout-btn"
+            id="checkout-btn"
             class="bg-green-500 text-white px-4 py-1 rounded"
           >
             Finalizar pedido
@@ -377,6 +379,7 @@
       </button>
     </footer>
     <!--final do Footer carrinho-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
