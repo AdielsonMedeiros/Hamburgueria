@@ -172,7 +172,11 @@ checkoutBtn.addEventListener("click", function () {
 function checkRestaurantOpen() {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 24;
+  const minuto = data.getMinutes();
+  const totalMinutos = hora * 60 + minuto;
+  const inicio = 18 * 60;
+  const fim = 23 * 60 + 30;
+  return totalMinutos >= inicio && totalMinutos < fim;
 }
 const aWpp = document.getElementById("date-a-wpp");
 const spanItem = document.getElementById("date-span");
