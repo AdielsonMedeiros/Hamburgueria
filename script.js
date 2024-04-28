@@ -174,7 +174,7 @@ function checkRestaurantOpen() {
   const hora = data.getHours();
   const minuto = data.getMinutes();
   const totalMinutos = hora * 60 + minuto;
-  const inicio = 18 * 60;
+  const inicio = 13 * 60;
   const fim = 23 * 60 + 30;
   return totalMinutos >= inicio && totalMinutos < fim;
 }
